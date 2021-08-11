@@ -10,4 +10,7 @@ public class ExcityApplication {
 		SpringApplication.run(ExcityApplication.class, args);
 	}
 
+	// TODO: Error handling
+	// TODO: Make the routes a little better (Filter by params)
+
 }
