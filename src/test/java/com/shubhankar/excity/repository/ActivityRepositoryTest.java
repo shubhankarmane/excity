@@ -35,7 +35,7 @@ class ActivityRepositoryTest {
     @Test
     public void printActivitiesByTypeTest() {
         List<Activity> activityList = activityRepository.findActivitiesByActivityTypeNameLike("education");
-        for(var activity : activityList) {
+        for (var activity : activityList) {
             System.out.println("activity = " + activity);
         }
     }
@@ -43,23 +43,23 @@ class ActivityRepositoryTest {
     @Test
     public void printActivitiesByPeopleRequiredTest() {
         List<Activity> activityList = activityRepository.findActivitiesByPeopleRequired(3);
-        for(var activity : activityList) {
+        for (var activity : activityList) {
             System.out.println("activity = " + activity);
         }
     }
 
     @Test
     public void printActivitiesByPriceTest() {
-        List<Activity> activityList = activityRepository.findActivitiesByPrice(Double.valueOf(100));
-        for(var activity : activityList) {
+        List<Activity> activityList = activityRepository.findActivitiesByPrice(100.00);
+        for (var activity : activityList) {
             System.out.println("activity = " + activity);
         }
     }
 
     @Test
     public void printActivitiesByPriceBetweenTest() {
-        List<Activity> activityList = activityRepository.findActivitiesByPriceBetween(Double.valueOf(300), Double.valueOf(400));
-        for(var activity : activityList) {
+        List<Activity> activityList = activityRepository.findActivitiesByPriceBetween(300.00, 400.00);
+        for (var activity : activityList) {
             System.out.println("activity = " + activity);
         }
     }

@@ -16,11 +16,11 @@ public class Activity {
             strategy = GenerationType.IDENTITY
     )
     private Integer id;
-    @Column (
+    @Column(
             nullable = false
     )
     private String description;
-    @Column (
+    @Column(
             nullable = false
     )
     private Integer peopleRequired;
