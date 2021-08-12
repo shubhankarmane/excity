@@ -11,6 +11,5 @@ public class ExcityApplication {
 	}
 
 	// TODO: Error handling
-	// TODO: Make the routes a little better (Filter by params)
 
 }

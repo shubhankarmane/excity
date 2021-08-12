@@ -26,31 +26,31 @@ public class ActivityController {
         return new ActivityResponse(activityService.getActivity());
     }
 
-    @GetMapping("/getActivityById/{id}")
-    public ActivityResponse getById(@PathVariable Integer id) {
+    @GetMapping(value = "/getActivity", params = "id")
+    public ActivityResponse getById(@RequestParam Integer id) {
         return new ActivityResponse(activityService.getActivityById(id));
     }
 
-    @GetMapping("/getActivitiesByType/{type}")
-    public List<ActivityResponse> getByType(@PathVariable String type) {
+    @GetMapping(value = "/getActivities", params = "type")
+    public List<ActivityResponse> getByType(@RequestParam String type) {
         List<Activity> activities = activityService.getActivitiesByType(type);
         return convertActivityToActivityResponse(activities);
     }
 
-    @GetMapping("/getActivitiesByParticipants/{numberOfParticipants}")
-    public List<ActivityResponse> getByParticipants(@PathVariable int numberOfParticipants) {
-        List<Activity> activities = activityService.getActivitiesByNumberOfPeopleRequired(numberOfParticipants);
+    @GetMapping(value = "/getActivities", params = "participants")
+    public List<ActivityResponse> getByParticipants(@RequestParam int participants) {
+        List<Activity> activities = activityService.getActivitiesByNumberOfPeopleRequired(participants);
         return convertActivityToActivityResponse(activities);
     }
 
-    @GetMapping("/getActivitiesByPrice/{price}")
-    public List<ActivityResponse> getByPrice(@PathVariable Double price) {
+    @GetMapping(value = "/getActivities", params = "price")
+    public List<ActivityResponse> getByPrice(@RequestParam Double price) {
         List<Activity> activities = activityService.getActivitiesByPrice(price);
         return convertActivityToActivityResponse(activities);
     }
 
-    @GetMapping("/getActivitiesByPrice/{start}/{end}")
-    public List<ActivityResponse> getByPriceBetween(@PathVariable Double start, @PathVariable Double end) {
+    @GetMapping(value = "/getActivities", params = {"start", "end"})
+    public List<ActivityResponse> getByPriceBetween(@RequestParam Double start, @RequestParam Double end) {
         List<Activity> activities = activityService.getActivitiesByPriceRange(start, end);
         return convertActivityToActivityResponse(activities);
     }
